@@ -1,4 +1,4 @@
-# Create build stage based on buster image
+# Pulling base image
 FROM golang:1.16-buster AS builder
 # Create working directory under /app
 WORKDIR /app
