@@ -25,6 +25,6 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build the Docker image
-      run: |
-        docker build . --file Dockerfile --tag ghcr.io/albertsebastian1/helloworld:latest
-        docker push ghcr.io/albertsebastian1/helloworld:latest
+      run: docker build . --file Dockerfile --tag ghcr.io/albertsebastian1/helloworld:latest
+    - name: Publish Docker image
+      run: docker push ghcr.io/albertsebastian1/helloworld:latest
