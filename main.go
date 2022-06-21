@@ -14,7 +14,7 @@ func GetMethod(c *gin.Context) {
 	c.JSON(http.StatusOK, message)
 }
 
-func main() {
+func helloworld() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello, World")
 	})
@@ -22,4 +22,8 @@ func main() {
 	if err := http.ListenAndServe(":80", nil); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func main() {
+	helloworld()
 }

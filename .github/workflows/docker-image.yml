@@ -43,3 +43,9 @@ jobs:
     # Publish Docker image to github container registry
     - name: Publish Docker image
       run: docker push ghcr.io/albertsebastian1/helloworld:latest
+
+    - name: Deploy the latest Docker image
+      uses: addnab/docker-run-action@v3
+      image: ghcr.io/albertsebastian1/helloworld:latest
+      with:
+        entrypoint: /hello_go_http
