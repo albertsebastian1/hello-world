@@ -11,6 +11,27 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+    # Check out the repository
+    - uses: actions/checkout@v2
+
+    # Setting Github authentication to checkout the code to GITHUB_WORKSPACE
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        # Registry github container register
+        # Supported container image formats, please refer https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#about-container-registry-support
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    # Performing go test with the latest code before Docker image build
+    - name: Testing hello world REST API
+      id: test
+      run: go test -v 
+
 
   build:
 
@@ -30,10 +51,10 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     
-    # Performing go test with the latest code before Docker image build
-    - name: Testing hello world REST API
-      id: test
-      run: go test -v 
+    # # Performing go test with the latest code before Docker image build
+    # - name: Testing hello world REST API
+    #   id: test
+    #   run: go test -v 
 
     # Build docker image
     - name: Build the Docker image
