@@ -9,6 +9,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  IMG_TAG: $GITHUB_RUN_ATTEMPT
 
 jobs:
 
@@ -38,8 +39,8 @@ jobs:
     # Build docker image
     - name: Build the Docker image
       if: steps.test.outputs.exit_code == 0
-      run: docker build . --file Dockerfile --tag ghcr.io/albertsebastian1/helloworld:$GITHUB_RUN_ID
+      run: docker build . --file Dockerfile --tag ghcr.io/albertsebastian1/helloworld:$IMG_TAG
 
     # Publish Docker image to github container registry
     - name: Publish Docker image
-      run: docker push ghcr.io/albertsebastian1/helloworld:$GITHUB_RUN_ID
+      run: docker push ghcr.io/albertsebastian1/helloworld:$IMG_TAG
