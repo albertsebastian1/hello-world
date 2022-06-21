@@ -6,9 +6,6 @@ The motivation behind this project is to learn and broaden my knowledge about pr
 
 Here I am taking a different path when I publish the Docker Image. I am making use of the github container registry. Please refer [Github Packages registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
 
-## A bit about me : ) 
-[Albert Sebastian](https://www.albertstech.com/) 
-
 ## The Project
 
 This is a simple REST API containerized to Docker Image whose test,build and publish is taken care by [Github Actions](https://github.com/features/actions)
