@@ -36,7 +36,7 @@ func TestGetMethod(t *testing.T) {
 
 	// Check to see if the response was what you expected
 	if w.Code == http.StatusOK {
-		t.Logf("Expected to get status %d is same ast %d\n", http.StatusOK, w.Code)
+		t.Logf("Expected to get status %d is same as %d\n", http.StatusOK, w.Code)
 	} else {
 		t.Fatalf("Expected to get status %d but instead got %d\n", http.StatusOK, w.Code)
 	}
