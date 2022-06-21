@@ -4,7 +4,7 @@ This is an example for Go project.
 
 The motivation behind this project is to learn and broaden my knowledge about programming, APIs, writing test cases for APIs and also containerizing REST API and publishing to Image Registry. 
 
-Here I am taking a different path when I publish the Docker Image. I am making use of the github container registry. Please refer [Github Packages registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
+Here I am taking a different path on where I publish the Docker Image. I am making use of the github container registry. Please refer [Github Packages registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
 
 ## The Project
 
